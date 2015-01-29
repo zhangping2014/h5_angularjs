@@ -12,7 +12,9 @@ app.controller("MainCtrl", ["$scope", "$log",
         };
 
         $scope.$watch("pageTitle", function(newVal, oldVal) {
-            document.title = newVal || "";
+            if (newVal) {
+                document.title = newVal;
+            }
         });
     }
 ]);
