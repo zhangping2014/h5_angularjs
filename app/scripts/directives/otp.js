@@ -165,7 +165,8 @@ app.directive("otpSuites", ["$log", function($log) {
 
         // flush token handler.
         function flushTokenHandler(data) {
-            var token = data.captchaToken;
+            // var token = data.captchaToken;
+            var token = data;
             // clear captcha error message.
             scope.errors.captcha = "";
             scope.captcha.captchaToken = token;
