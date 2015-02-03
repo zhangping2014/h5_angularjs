@@ -75,7 +75,7 @@
         // default apiRoot, cdnRoot is production.
         var _remote = envs["production"];
         // for production env.
-        if (!currHost || (currHost && currHost == "h5.1qianbao.com")) {
+        if (!currHost || currHost == "h5.1qianbao.com" || currHost == "ms.1qianbao.com") {
             return _remote;
         }
         var diEnvFactory = angular.fromJson(localStorage.getItem(DI_ENV_SETTING_FACTORY));
@@ -131,7 +131,7 @@
         }
         // get cache index page url.
         var indexStates = this.getState("index") || [];
-        
+
         var hasExitedIndexHashMap = false;
         for (var i = 0; i < indexStates.length; i++) {
             var curr = indexStates[i];
