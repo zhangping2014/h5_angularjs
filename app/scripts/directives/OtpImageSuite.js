@@ -141,8 +141,6 @@
 
             tickerLeft = tickerLeft || cfg.tickerSecond;
 
-            tearDownTicker();
-
             tickerId = setTimeout(function() {
                 log("ticker `%s` ", tickerLeft);
                 scope.fireEvent("showTicker", tickerLeft);
@@ -165,6 +163,8 @@
         };
 
         this._startTicker = function(scope, tickerSecond) {
+            // tear down running ticker.
+            tearDownTicker();
             // make sure provider  
             startTicker(scope, tickerSecond);
         };
